@@ -18,10 +18,6 @@ public class ArchiveBase{
 		
 		while(line != null) {
 			String[] explodedLine = line.split(";");
-			System.out.println(line);
-			System.out.println(explodedLine[0].equalsIgnoreCase(word));
-			System.out.println(explodedLine[2].equals("0"));
-			System.out.println();
 			if(explodedLine[0].equalsIgnoreCase(word) && explodedLine[2].equals("0")) {
 				indexFile.close();
 				return Long.parseLong(explodedLine[1]);

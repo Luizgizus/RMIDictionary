@@ -14,7 +14,6 @@ public class Server extends UnicastRemoteObject implements IntrServidor {
 		Meaning m = new Meaning(word, null);
 		try {
 			long positionMeaning = ArchiveBase.getPositionMeaning(word);
-			System.out.println(positionMeaning);
 			if(positionMeaning != -1) {
 				String meaning = ArchiveBase.getMeaningByPosition(positionMeaning);
 				m.setDescription(meaning);
@@ -22,9 +21,7 @@ public class Server extends UnicastRemoteObject implements IntrServidor {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println(m.toString());
-		
+				
 		if(m.hasMeaning()) {
 			return m.toString();
 		} else {
@@ -40,7 +37,7 @@ public class Server extends UnicastRemoteObject implements IntrServidor {
 				long position = ArchiveBase.addMeaning(meaning);
 				ArchiveBase.addWord(word + ";" + position + ";0");
 			} else {
-				return null;
+				return "Palavra já existe nesse dicionário";
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
