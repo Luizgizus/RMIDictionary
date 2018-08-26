@@ -10,7 +10,8 @@ public class ArchiveBase{
 		indexFile.seek(indexFile.length());
 		indexFile.writeBytes(line + "\n");
 		indexFile.close();
-	}	
+	}
+	
 	public static long getPositionMeaning(String word) throws IOException{
         RandomAccessFile indexFile = new RandomAccessFile("baseIdxWords.txt", "rw");
         

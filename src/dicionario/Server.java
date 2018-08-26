@@ -30,7 +30,7 @@ public class Server extends UnicastRemoteObject implements IntrServidor {
 	}
 
 	@Override
-	public String AddNewMeaning(String word, String meaning) throws RemoteException {
+	synchronized public String AddNewMeaning(String word, String meaning) throws RemoteException {
 		try {
 			String alreadyHasMeaning = getMeaningByWord(word);
 			if(alreadyHasMeaning == null) {
@@ -47,7 +47,7 @@ public class Server extends UnicastRemoteObject implements IntrServidor {
 	}
 
 	@Override
-	public String removeMeaning(String word) throws RemoteException {
+	synchronized public String removeMeaning(String word) throws RemoteException {
 		try {
 			String hasMeaning = getMeaningByWord(word);
 			if(hasMeaning == null) {

@@ -88,7 +88,6 @@ public class Client {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String word = textField.getText();
-				System.out.println(word);
 				String resp = null;
 				try {
 					if(word != null && word.length() > 0) {
@@ -221,8 +220,6 @@ public class Client {
 				}
 			}
 		}
-		
-		System.out.println(resp);
 		
 		return resp;
 	}
