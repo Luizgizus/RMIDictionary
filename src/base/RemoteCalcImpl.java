@@ -1,4 +1,5 @@
 package base;
+
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 public class RemoteCalcImpl extends UnicastRemoteObject implements RemoteCalc {

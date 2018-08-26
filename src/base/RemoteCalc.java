@@ -1,5 +1,6 @@
 package base;
 
+
 import java.rmi.*;
 public interface RemoteCalc extends Remote {
 	public abstract float soma(float a, float b) throws RemoteException;
