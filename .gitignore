@@ -3,6 +3,6 @@
 
 \.project
 
-*.txt
+baseIdxWords\.txt
 
-*.class
+baseMeaningWords\.txt

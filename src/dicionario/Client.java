@@ -39,7 +39,14 @@ public class Client {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					String ipServer = JOptionPane.showInputDialog("Qual o ip do servidor que vc quer se conectar?");
+					String ipServer = null;
+					String TextIpServer = "localhost";
+					if(args.length > 0) {
+						TextIpServer = args[0];
+					}
+					
+					ipServer = JOptionPane.showInputDialog("Qual o ip do servidor que vc quer se conectar?", TextIpServer);
+					
 					while(ipServer == null || ipServer.length() <= 0) {
 						JOptionPane.showMessageDialog(null, "Escreva o ip corretamente", "Erro de preenchimento", JOptionPane.ERROR_MESSAGE);
 						ipServer = JOptionPane.showInputDialog("Qual o ip do servidor que vc quer se conectar?");
